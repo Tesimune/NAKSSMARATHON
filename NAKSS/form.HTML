@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="logo.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAKSS MARATON RACE</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+        body{
+            background-color: white;
+        }
+            .register .nav-tabs .nav-link:hover{
+                border: none;
+            }
+            .text-align{
+                margin-top: -3%;
+                margin-bottom: -9%;
+
+                padding: 10%;
+                
+            }
+            .form-new, em{
+               text-align: center;
+            }
+            .register-heading{
+                
+                margin-bottom: 5%;
+                color: #000000;
+            }
+            .register-heading h1, h5{
+                margin-bottom: 3%;
+                color: #070707;
+            }
+           
+           li{
+               text-align: left;
+           }
+            .btnSubmit
+            {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: #03612e;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+            img{
+                width: 20%;
+                height: 20%;
+                border-radius: 10%;
+            }
+    </style>
+
+</head>
+<body>
+    
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="image fit"><img src="logo.jpg" alt="" /></div>
+                            <h3 class="register-heading">NATIONAL ASSOCIATION OF KWARA STATE STUDENT'S</h3>
+                            <h5 class="register-subheading">NATIONAL HEADQUARTERS</h5>
+                            <h5 class="register-subheading">Marathon Race Form</h5>
+                            <h10 class="register-heading"><em>PLEASE FILL IN THE REQUIRED FIELD MARKED WITH *<br></em></h10>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        <div class="form-group">
+                                            <input type="text" name="Name" class="form-control" placeholder="FULL NAME *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Department" class="form-control" placeholder="DEPARTMENT *" value="" required=""/>
+                                        </div><div class="form-group">
+                                            <input type="text" name="level" class="form-control" placeholder="LEVEL *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="School" class="form-control" placeholder="SCHOOL *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Town" class="form-control" placeholder="TOWN *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="LGA" class="form-control" placeholder="LOCAL GOVERNMENT *" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Email" class="form-control" placeholder="EMAIL ADDRESS " value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" name="Phone" class="form-control" placeholder="PHONE NUMBER *" value="" required=""/>
+                                        </div>
+                                        
+                                        <h5 class="register-heading">RULES AND REGULATION</h5>
+                                        
+                                        <h9 class="register-heading"> 
+                                        <oL>
+                                            <em>
+                                                <li>Do ensure to bring a printed hard copy of this form</li>
+                                                <li>Contestant must come before the time schedule</li>
+                                                <li>Contestant must not wear bulky cloth rather than the  bib provided</li>
+                                                <li>No dooping and leaving the course</li>
+                                                <li>No sideline boozing</li>
+                                                <li>Any contestant who fail to submit his/her form before the race shall be found disqualify</li>
+                                                <li>Each contestant must sign at the back of his/her passport before attaching it to the form.</li>
+                                                <li>Every constant must attach his/her certificate of origin and school I.D card at least one copy</li>
+                                                <li>Contestant must read and abide by the rules and regulations provided by the committe</li>
+                                            </em>
+                                        </oL>
+                                    </h9>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="AGREE AND SUBMIT" />
+                                        </div>
+                                        <h5 class="register-heading"><EM>NOTE: AWAIT CONFIRMATION MESSAGE BEFORE PRINTING<EM></h5>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzqR4gEzbmQh-ulrrVMKAy2G62Tbf1EfoL4xsdy4Kvto2Mv_807wWWOfAfgGY8ETgrblA/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("NAKSS MARATON RACE REGISTRATION SUCESSFUL!!!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
